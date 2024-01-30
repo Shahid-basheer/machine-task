@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        padding: 0;
+      }
+      li:hover {
+        cursor: pointer;
+      }
+
+      ul > li {
+        margin: 10px;
+      }
+      a:hover {
+        color: #5fc4e9;
+        text-decoration: underline;
+        text-decoration-color: #5fc4e9;
+        transition: 2s linear 2s;
+      }
+      #top-section-one {
+        width: 100%;
+        height: 38rem;
+        background: #121891;
+        color: #fff;
+        padding: 9rem;
+      }
+      .btn {
+        border-radius: 38px;
+        color: #7df192;
+        width: 88px;
+        height: 42px;
+        border: 1px solid #7df192;
+        box-shadow: 0 1px 10px #7df192;
+        background-color: transparent;
+      }
+      /* #top-section > div {
+        width: 50%;
+      } */
+      #top-section-one > h2 {
+        font-size: 54px;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      #top-section-one > p {
+        line-height: 24px;
+        margin-bottom: 5rem;
+      }
+      #top-section-two {
+        width: 100%;
+        height: 45rem;
+        padding-top: 10rem;
+        background: #121891;
+        text-align: center;
+        color: #fff;
+      }
+      #top-section-two h2 {
+        font-weight: 800;
+      }
+      #video-player {
+        width: 100%;
+        height: 25rem;
+        display: flex;
+        justify-content: center;
+      }
+      #video-player > div {
+        width: 50rem;
+        height: 25rem;
+        background: #363ba1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #top-section-three {
+        width: 100%;
+        height: 35rem;
+        background: #fff;
+        text-align: center;
+        padding: 3rem;
+      }
+
+      #title > h2 {
+        color: #121891;
+        font-weight: 700;
+      }
+      #title > h6 {
+        color: #121891;
+        font-weight: 700;
+      }
+
+      #content {
+        width: 100%;
+        height: 20rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      #content > #one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #content > #three {
+        width: 0;
+      }
+      #content > #one :nth-child(1) {
+        border-left: 6px solid gainsboro;
+        height: 6rem;
+      }
+      #content > #one :nth-child(2) {
+        border-left: 6px solid #363ba1;
+        height: 6rem;
+      }
+      #content > #one :nth-child(3) {
+        border-left: 6px solid gainsboro;
+        height: 6rem;
+      }
+
+      #content > #two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #content > #two h4 {
+        text-align: justify;
+        color: #363ba1;
+        font-weight: 500;
+      }
+      #content > #two p {
+        text-align: justify;
+      }
+
+      #content > #three > #circle-img {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background: gainsboro;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #modules {
+        width: 100%;
+        height: auto;
+        background: #121891;
+        padding: 5rem;
+        text-align: center;
+        color: #fff;
+      }
+      #modules-card {
+        width: 100%;
+        height: 40rem;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      #modules-card > .card {
+        min-width: 15rem;
+        height: 18rem;
+        background: #363ba1;
+        padding: 15px;
+      }
+
+      #modules-card > .card > div {
+        min-width: 13rem;
+        height: 13rem;
+        border-radius: 10px;
+        background: #fff;
+        margin-bottom: 1rem;
+      }
+
+      #clients {
+        width: 100%;
+        height: 50rem;
+        background: #121891;
+        color: #fff;
+      }
+      #clients > #card-img {
+        background-image: url(./images//clients.png);
+        width: 100%;
+        height: 30rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+      }
+
+      #br-line {
+        border-top: 3px solid #363ba1;
+      }
+      #footer {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        background: #121891;
+        color: #fff;
+        padding: 5rem;
+      }
+
+      #footer-container {
+        width: 100%;
+        background-color: #121891;
+        padding: 5rem;
+      }
+      #footer-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      #hr-line {
+        border-top: 1px solid gray;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      /* -----------------------    media query      --------------------------- */
+      @media screen and (min-width: 300px) {
+        #top-section-one > h2 {
+          font-size: 40px;
+        }
+        #top-section-one {
+          padding: 2rem;
+          padding-top: 5rem;
+        }
+        #top-section-two {
+          padding: 2rem;
+        }
+        #top-section-three {
+          width: 100%;
+          height: 69rem;
+          background: #fff;
+          text-align: center;
+          padding: 3rem;
+        }
+        #one {
+          width: 0;
+        }
+        #content {
+          width: 100%;
+          height: 20rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        #modules {
+          height: 170rem;
+          padding: 0;
+        }
+        #modules-card {
+          width: 100%;
+          height: auto;
+          display: grid;
+          grid-gap: 0;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        #footer {
+          display: grid;
+          grid-template-columns: repeat(1, auto);
+          background: #121891;
+          color: #fff;
+          padding: 5rem;
+        }
+      }
+      @media screen and (min-width: 700px) {
+        #top-section-one > h2 {
+          font-size: 40px;
+        }
+        #top-section-one {
+          padding: 9rem;
+        }
+
+        #content > #three {
+          padding-top: 2rem;
+        }
+        #content {
+          width: 100%;
+          height: 20rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        #modules {
+          height: 90rem;
+          padding: 0;
+        }
+        #modules-card {
+          width: 100%;
+          height: 40rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        #footer {
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          background: #121891;
+          color: #fff;
+          padding: 5rem;
+        }
+      }
+      @media screen and (min-width: 1000px) {
+        #top-section-one > h2 {
+          font-size: 40px;
+        }
+        #top-section-one {
+          padding: 9rem;
+        }
+        #top-section-three {
+          width: 100%;
+          height: 45rem;
+          background: #fff;
+          text-align: center;
+          padding: 3rem;
+        }
+        #content {
+          width: 100%;
+          height: 20rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        #content > #three {
+          padding-top: 0;
+        }
+        #modules {
+          height: 90rem;
+          padding: 5rem;
+        }
+        #modules-card {
+          width: 100%;
+          height: 40rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        #footer {
+          display: grid;
+          grid-template-columns: repeat(3, auto);
+          background: #121891;
+          color: #fff;
+          padding: 5rem;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        #top-section-one > h2 {
+          font-size: 40px;
+        }
+        #top-section-one {
+          padding: 9rem;
+        }
+        #content {
+          width: 100%;
+          height: 20rem;
+          display: grid;
+          grid-template-columns: auto auto auto;
+        }
+        #content > #three {
+          padding-top: 0;
+        }
+        #one {
+          width: auto;
+        }
+        #modules-card {
+          width: 100%;
+          height: 40rem;
+          display: grid;
+          grid-gap: 2rem;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        #footer {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          background: #121891;
+          color: #fff;
+          padding: 5rem;
+        }
+        #clients > #card-img {
+          background-image: url(./images//clients.png);
+          width: 100%;
+          height: 30rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-top: 5rem;
+          margin-bottom: 10rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ------------------Navbar------------------- -->
+    <nav
+      class="navbar navbar-expand-lg"
+      style="
+        background: #121891;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999;
+      "
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./images/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto" style="text-transform: uppercase">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Modules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">News & Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <div style="width: 5rem; text-align: end">
+                <button class="btn">Login</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ----------------------------------- Top Section ------------------------------- -->
+    <div id="top-section-one">
+      <h2>
+        Revolutionizing <br />Healthcare Management <br />
+        with Cloud-Powered <br />
+        Simplicity
+      </h2>
+      <p>Experience Seamless Operations and Real-time Connectivity</p>
+      <button class="btn" style="width: auto">Request a Demo</button>
+    </div>
+    <div id="top-section-two">
+      <h2>Welcome to DoctorLive</h2>
+      <p>
+        Your Cloud-Powered Hospital Management Solution No servers, no
+        complexities - just a browser <br />
+        and internet connection needed Real-time interdepartmental communication
+        for efficient, paperless <br />
+        operations Customizable to suit your hospital's unique needs, ensuring
+        every <br />
+        department stays connected
+      </p>
+      <div id="video-player">
+        <div>
+          <img src="./images//pause.png" alt="" />
+        </div>
+      </div>
+      <button class="btn" style="width: auto; margin-top: -20px">
+        Request a Demo
+      </button>
+    </div>
+    <div id="top-section-three">
+      <div id="title">
+        <h2>Unlock the Power of DoctorLive</h2>
+        <h6>Features that Transform Healthcare</h6>
+        <p>
+          Discover how DoctorLive redefines healthcare management. From enhanced
+          patient <br />
+          experience to optimized productivity, each feature contributes to a
+          seamless <br />
+          and efficient healthcare ecosystem.
+        </p>
+      </div>
+      <div id="content">
+        <div id="one">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="two">
+          <div>
+            <h4>Patient Turnaround <br />Time Optimization</h4>
+            <p>
+              Cut down waiting times. Our system <br />streamlines appointments
+              and queues,<br />
+              ensuring swift patient care.
+            </p>
+          </div>
+        </div>
+        <div id="three">
+          <div id="circle-img">
+            <img src="./images/discussion.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------- Bottom section ------------------------- -->
+    <div id="modules">
+      <h3>Modules & Functions</h3>
+      <div id="modules-card" class="pt-5">
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">
+            Patient <br />
+            Management
+          </h5>
+          <p class="text-start">
+            Effortlessly manage appointments and schedules for optimized
+            patient-doctor communication
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">Outpatient Handling</h5>
+          <p class="text-start">
+            Streamline outpatient visits - from appointments to pharmacy
+            prescriptions - for shorter patient wait times.
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">Inpatient Handling</h5>
+          <p class="text-start">
+            Efficiently manage inpatient admissions, optimizing room
+            availability and treatment records.
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">Financial And Billing</h5>
+          <p class="text-start">
+            Simplify finances. Let our Billing Module take care of inpatient,
+            outpatient billing, and more.
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">Insurance</h5>
+          <p class="text-start">
+            Track patient insurance details and manage insurance transactions
+            with ease.
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">E-mail and SMS Integration</h5>
+          <p class="text-start">
+            Facilitate appointments and communication through SMS and email
+            notifications
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">Pharmacy Management</h5>
+          <p class="text-start">
+            Effortlessly manage pharmaceutical inventory, purchases, and
+            prescriptions
+          </p>
+        </div>
+        <div class="card text-white">
+          <div></div>
+          <h5 class="text-start">EMR (Electronic Medical Records)</h5>
+          <p class="text-start">
+            Streamline patient treatment details, secure data sharing, and
+            improve patient care.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------- Footer section card --------------------------- -->
+
+    <div id="clients">
+      <h3 class="text-center fw-bolder">Clients & Testimonials</h3>
+      <div id="card-img"></div>
+      <div id="br-line"></div>
+    </div>
+
+    <!-- Footer section -->
+    <div id="footer">
+      <div>
+        <img src="./images/logo.png" alt="" />
+        <ul>
+          <li>
+            Lorem ipsum dolor sit nibh consectetuer adipiscing sed sed diam
+            Lorem ipsum dolor sit nibh dolor
+          </li>
+          <li>Kerala Startup Mission</li>
+          <li>Govt. Cyberpark Kozhikode Kerala</li>
+          <li>+91 9744 44 75 08</li>
+          <li>Info@doctorlive.co</li>
+          <li>www.doctorlive.co</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li>About</li>
+          <li>Solution</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li>Help & Support</li>
+          <li>FAQs</li>
+          <li>News & Blogs</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Subscribe</h5>
+        <ul>
+          <li>
+            <input
+              type="text"
+              placeholder="Your email address"
+              style="background: transparent; border: none; border-radius: 10px"
+            /><button
+              style="
+                padding: 10px;
+                background: transparent;
+                border: none;
+                color: #fff;
+              "
+            >
+              Send
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer-container">
+      <div id="hr-line"></div>
+      <div id="footer-icons">
+        <div>
+          <span class="text-white"
+            >© Doctor Live 2023. All rights reserved.</span
+          >
+        </div>
+        <div>
+          <img src="./images/icons.png" alt="" style="cursor: pointer" />
+          <img src="./images/arrow.png" alt="" style="cursor: pointer" />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
